@@ -1,0 +1,353 @@
+/* Algemene stijl */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #E8F9FF;
+  color: #333;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body.dark-mode {
+  background-color: #26183f;
+  color: #e5e7eb;           
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+nav {
+  position:absolute;
+  top: 10px;             /* een beetje ruimte van boven */
+  left: 10px;            /* een beetje ruimte van links */
+  right: 10px;           /* een beetje ruimte van rechts */
+  background-color: #C5BAFF;
+  display: flex;
+  justify-content: center; /* zet de links in het midden */
+  padding: 15px 30px;
+  border-radius: 12px;
+  z-index: 1000;
+}
+
+.dark-mode nav {
+  background-color: #4d276d;
+  color: white;
+}
+
+h1 {
+  color: rgb(24, 15, 100);
+}
+
+.dark-mode h1 {
+  color: #ffffff;
+}
+
+header {
+  background-color: #C4D9FF;
+  color: white;
+  text-align: center;
+  padding: 80px 10px 10px; /* extra ruimte bovenaan (80px) */
+  border-radius: 12px;
+}
+
+.dark-mode header {
+  background: #5e3288;
+  color: white;
+}
+
+.profielfoto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-top: 10px;
+}
+
+
+.volleybal {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  left: 450px;
+  border-radius: 20px;
+}
+
+.progameren {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  left: 650px;
+  border-radius: 20px;
+}
+
+.sportschool {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  left: 850px;
+  border-radius: 20px;
+}
+
+
+nav a {
+  color:#000080;
+  text-decoration: none;
+  margin: 10px 15px;
+  font-weight: bold;
+}
+
+.dark-mode nav a{
+
+  color: white;
+
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #b3e9fe;
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+/* Main content */
+main {
+  flex: 1; /* duwt de footer naar beneden */
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.textpos {
+  position: relative;
+  top: -8cm ;
+  left: -7cm;
+}
+
+.overmijtextpos1 {
+  position: relative;
+  top: 0cm ;
+  left: -5cm;
+}
+
+.radius {
+  border-radius: 10px;
+  width: 250px;
+  height: 350px;
+}
+
+.imgborder {
+  position: relative;
+  top: 2cm;
+  left: 6cm;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 5px auto;
+  max-width: 1400px;
+}
+
+/* Secties */
+section {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 50px ;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.dark-mode section {
+  
+  background: rgb(61, 56, 71);
+  color: white;
+
+}
+
+.home section {
+   background-color: #e6ffeb;
+}
+
+.overmij section {
+  background-color: #fff4e6; /* lichte oranje tint */
+}
+
+.vaardigheden section {
+  background-color: #e6f7ff; /* lichtblauw */
+}
+
+.projecten section {
+  background-color: #f2e6ff; /* lichtpaars */
+}
+
+#warp {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#warp:hover{
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.0.07);
+}
+
+/* Lijsten */
+ul {
+  list-style-type: circle;
+  padding-left: 25px;
+  text-align: left;
+}
+
+/* Footer */
+footer {
+  background-color: #FBFBFB;
+  color: black;
+  text-align: center;
+  padding: 20px;
+  margin-top: 200px;
+}
+
+.dark-mode footer{
+   background: #252525;
+  color: white;
+}
+
+footer a {
+  color: black;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Fullscreen overlay that blocks the entire page */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    z-index: 9998;
+    display: none;
+}
+
+/* Popup */
+#cookie-popup {
+    position: fixed;
+    bottom: 350px;
+    right: 500px;
+    max-width: 300px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    font-family: Arial, sans-serif;
+    z-index: 9999;
+
+    /* Start hidden for animation */
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: none;
+}
+
+.dark-mode #cookie-popup {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+
+#cookie-popup.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Button styling */
+#cookie-popup button {
+    background: #007bff;
+    border: none;
+    padding: 8px 14px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* Dark mode */
+.dark-mode {
+  background: #1e1e1e;
+  color: white;
+}
+
+
+/* Optioneel: styling van de knop */
+#theme-toggle {
+  padding: 10px 20px;
+  border: none;
+  background-color: #C5BAFF;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dark-mode #theme-toggle{
+background-color: #4c286e;
+
+}
+
+
+#theme-toggle:hover {
+  background-color: #b2a6ec;
+}
+
+.dark-mode #theme-toggle:hover{
+background-color: #582e80;
+}
+
+.jump-in {
+  animation: jumpIn 0.6s ease-out;
+  display: inline-block;
+}
+ 
+/* Fade-out */
+.fade-out {
+  animation: fadeOut 1s forwards;
+}
+ 
+/* Keyframes */
+@keyframes jumpIn {
+  0% {
+    transform: scale(0.3) translateY(-50px);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2) translateY(10px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+ 
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+#groet {
+    color: #8b5cf6;
+    font-weight: bold;
+    text-align: center;
+}
+
+#countdown {
+    font-weight: bold;
+    color: #8b5cf6;
+   
+}
+#countsec {
+    margin: 50px;
+    text-align: center;
+    padding: 30px;
+    }
